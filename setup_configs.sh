@@ -2,11 +2,11 @@
 
 # vimrc
 rm ~/.vimrc 2> /dev/null
-ln -s ~/config/dotfiles/vimrc ~/.vimrc
+ln -s ~/Config/dotfiles/vimrc ~/.vimrc
 
 # bashrc
 rm ~/.bashrc 2> /dev/null
-ln -s ~/config/dotfiles/bashrc ~/.bashrc
+ln -s ~/Config/dotfiles/bashrc ~/.bashrc
 
 # Disable Animations
 gsettings set org.gnome.desktop.interface enable-animations false
