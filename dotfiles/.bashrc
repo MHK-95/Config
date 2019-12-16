@@ -2,13 +2,13 @@
 # My Stuff
 ###################################################################################################
 # Get my bash prompt
-if [ -f ~/Config/dotfiles/bash_prompt ]; then
-    . ~/Config/dotfiles/bash_prompt
+if [ -f ~/.bash_prompt ]; then
+    . ~/.bash_prompt
 fi
 
 # Get my bash aliases
-if [ -f ~/Config/dotfiles/bash_aliases ]; then
-    . ~/Config/dotfiles/bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 ###################################################################################################

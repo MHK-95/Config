@@ -1,12 +1,12 @@
 #!/bin/bash
+#----------------------------------------------------------------------------------------------------------------------#
+#                                                  configure_gnome.sh                                                  #
+#----------------------------------------------------------------------------------------------------------------------#
+# This script will configure GNOME with the settings I want using gsettings.
 
-# vimrc
-rm ~/.vimrc 2> /dev/null
-ln -s ~/Config/dotfiles/vimrc ~/.vimrc
+source ./bash_scripts/common.sh
 
-# bashrc
-rm ~/.bashrc 2> /dev/null
-ln -s ~/Config/dotfiles/bashrc ~/.bashrc
+test $EUID -eq 0 && fail "This script can only be run as normal user." 1
 
 # Disable Animations
 gsettings set org.gnome.desktop.interface enable-animations false

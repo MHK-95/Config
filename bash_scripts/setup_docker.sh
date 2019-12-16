@@ -13,7 +13,7 @@ apt install -y apt-transport-https ca-certificates curl gnupg-agent software-pro
     || fail "Couldn't install a package." 1
 
 # Add the GPG key.
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - || fail "Could not download the GPG key." 1
 apt-key fingerprint 0EBFCD88
 
 # Add the Docker repo.
