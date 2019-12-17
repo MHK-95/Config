@@ -11,6 +11,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# pyenv's stuff
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 ###################################################################################################
 # Ubuntu's Stuff
 ###################################################################################################

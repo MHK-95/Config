@@ -11,3 +11,6 @@ source ./bash_scripts/common.sh
 
 test $EUID -eq 0 || fail "This script can only be run as root." 1
 
+su -c "./bash_scripts/setup_python.sh" $USERNAME
+
+exit 0
