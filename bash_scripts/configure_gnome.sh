@@ -12,12 +12,26 @@ test $EUID -eq 0 && fail "This script can only be run as normal user." 1
 gsettings set org.gnome.desktop.interface enable-animations false
 
 # Setup my Dash with my favorite apps
-gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'gnome-terminal.desktop', \
-    'org.gnome.Nautilus.desktop']"
+gsettings set org.gnome.shell favorite-apps ['firefox.desktop', 'org.gnome.Nautilus.desktop', \
+'org.gnome.Terminal.desktop', 'evince.desktop', 'com.visualstudio.code.oss.desktop', \
+'com.jetbrains.PyCharm-Community.desktop', 'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop']
 
 # Terminal
-
 gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false
+
+# Get the terminal id and set up the schema_path for gnome-terminal.
+gnome_terminal_profile=`gsettings get org.gnome.Terminal.ProfilesList default | awk -F \' '{print $2}'`
+schema_path=org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$gnome_terminal_profile/
+
+# I like the default font for gnome.
+#gsettings set $schema_path font 'Monospace 10'
+#gsettings set $schema_path use-system-font false
+
+gsettings set $schema_path audible-bell false
+gsettings set $schema_path use-theme-colors false
+gsettings set $schema_path background-color '#000000'
+gsettings set $schema_path foreground-color '#AFAFAF'
+
 
 # KeyBindings for Teminal
 gsettings_schema=org.gnome.Terminal.Legacy.Keybindings
@@ -27,4 +41,4 @@ schema_path=$gsettings_schema:$gsettings_path
 gsettings set $schema_path zoom-in '<Ctrl>j'
 gsettings set $schema_path zoom-out '<Ctrl>k'
 
-
+exit 0
