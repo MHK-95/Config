@@ -6,6 +6,9 @@
 # However, this script will run some of the bash scripts as root, but some of the bash scripts a normal user. The
 # common.sh file finds the normal user of the machine with the "who" command. Then, you can run scripts as a normal
 # user with the "su -c" command.
+#
+# The scripts do need to be run in order. For example install_packages.sh script will install dependencies that the
+# setup_python.sh will need. 
 
 source ./bash_scripts/common.sh
 
