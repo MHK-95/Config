@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------------------------------------------------#
 #                                                   setup_docker.sh                                                    #
 #----------------------------------------------------------------------------------------------------------------------#
-# This script will install docker and give the user the ability to run docker with root privileges.
+# This script will install docker and give the user the ability to run docker without root privileges.
 
 source ./bash_scripts/common.sh
 
