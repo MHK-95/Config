@@ -1,1 +1,0 @@
-alias vscode='flatpak run com.visualstudio.code.oss'
