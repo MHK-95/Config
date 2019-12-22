@@ -11,6 +11,16 @@ source ./bash_scripts/common.sh
 
 test $EUID -eq 0 || fail "This script can only be run as root." 1
 
-su -c "./bash_scripts/setup_python.sh" $USERNAME
+./bash_scripts/install_packages.sh || exit $?
+
+./bash_scripts/setup_docker.sh || exit $?
+
+su -c "./bash_scripts/setup_python.sh" $USERNAME || exit $?
+
+su -c "./bash_scripts/setup_flatpak.sh" $USERNAME || exit $?
+
+su -c "./bash_scripts/make_symlinks.sh" $USERNAME || exit $?
+
+su -c "./bash_scripts/configure_gnome.sh" $USERNAME || exit $?
 
 exit 0

@@ -13,8 +13,12 @@ gsettings set org.gnome.desktop.interface enable-animations false
 
 # Setup my Dash with my favorite apps
 gsettings set org.gnome.shell favorite-apps ['firefox.desktop', 'org.gnome.Nautilus.desktop', \
-'org.gnome.Terminal.desktop', 'evince.desktop', 'com.visualstudio.code.oss.desktop', \
-'com.jetbrains.PyCharm-Community.desktop', 'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop']
+'org.gnome.Terminal.desktop', 'com.visualstudio.code.oss.desktop', 'com.jetbrains.PyCharm-Community.desktop' \
+'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop']
+
+# Set The Dash's opacity
+gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
+gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.9
 
 # Terminal
 gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false
@@ -30,8 +34,6 @@ schema_path=org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profile
 gsettings set $schema_path audible-bell false
 gsettings set $schema_path use-theme-colors false
 gsettings set $schema_path background-color '#000000'
-gsettings set $schema_path foreground-color '#AFAFAF'
-
 
 # KeyBindings for Teminal
 gsettings_schema=org.gnome.Terminal.Legacy.Keybindings
@@ -40,5 +42,8 @@ schema_path=$gsettings_schema:$gsettings_path
 
 gsettings set $schema_path zoom-in '<Ctrl>j'
 gsettings set $schema_path zoom-out '<Ctrl>k'
+
+gsettings set org.gnome.desktop.background picture-uri "file://$PWD/wallpapers/background"
+gsettings set org.gnome.desktop.screensaver picture-uri "file://$PWD/wallpapers/screensaver"
 
 exit 0
