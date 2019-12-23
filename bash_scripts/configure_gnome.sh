@@ -12,9 +12,9 @@ test $EUID -eq 0 && fail "This script can only be run as normal user." 1
 gsettings set org.gnome.desktop.interface enable-animations false
 
 # Setup my Dash with my favorite apps
-gsettings set org.gnome.shell favorite-apps ['firefox.desktop', 'org.gnome.Nautilus.desktop', \
-'org.gnome.Terminal.desktop', 'com.visualstudio.code.oss.desktop', 'com.jetbrains.PyCharm-Community.desktop' \
-'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop']
+gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', \
+    'org.gnome.Terminal.desktop', 'com.visualstudio.code.oss.desktop', 'com.jetbrains.PyCharm-Community.desktop', \
+    'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop']"
 
 # Set The Dash's opacity
 gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
