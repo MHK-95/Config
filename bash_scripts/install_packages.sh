@@ -10,7 +10,7 @@ test $EUID -eq 0 || fail "This script can only be run as root." 1
 
 apt update || fail "Could't apt update." 1
 
-apt install -y neofetch vim youtube-dl \
+apt install -y neofetch vim youtube-dl openssh-server \
     || fail "Couldn't install a package." 1
 
 # These are the dependencies for pyenv. I'm installing them here since the setup_python.sh script needs to be run
@@ -20,8 +20,6 @@ apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline
     || fail "Couldn't install a package." 1
 
 # install flatpak
-add-apt-repository ppa:alexlarsson/flatpak
-sudo apt update
 apt install -y flatpak || fail "Couldn't install the flatpak package." 1
 
 exit 0
