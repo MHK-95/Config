@@ -2,8 +2,8 @@
 #----------------------------------------------------------------------------------------------------------------------#
 #                                                master_script-user.sh                                                 #
 #----------------------------------------------------------------------------------------------------------------------#
-# This script will run the script inside of bash_scripts directory in a procedual manner. This script the bash scripts
-# that don't require root privileges.
+# This script will run the script inside of bash_scripts directory in a procedual manner. This script runs the bash 
+# scripts that don't require root privileges.
 
 source ./bash_scripts/common.sh
 

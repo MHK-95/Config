@@ -11,6 +11,9 @@ test $EUID -eq 0 && fail "This script can only be run as normal user." 1
 # Disable Animations
 gsettings set org.gnome.desktop.interface enable-animations false
 
+# Disable blinking cursor on everything
+gsettings set org.gnome.desktop.interface cursor-blink false
+
 # Setup my Dash with my favorite apps
 gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', \
     'org.gnome.Terminal.desktop', 'com.visualstudio.code.oss.desktop', 'com.jetbrains.PyCharm-Community.desktop', \
