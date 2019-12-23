@@ -17,8 +17,8 @@ gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Naut
     'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop']"
 
 # Set The Dash's opacity
-gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
-gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.9
+# gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
+# gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.9
 
 # Terminal
 gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false

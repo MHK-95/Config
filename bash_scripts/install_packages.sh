@@ -10,7 +10,7 @@ test $EUID -eq 0 || fail "This script can only be run as root." 1
 
 apt update || fail "Could't apt update." 1
 
-apt install -y neofetch vim youtube-dl openssh-server \
+apt install -y neofetch vim youtube-dl openssh-server htop \
     || fail "Couldn't install a package." 1
 
 # These are the dependencies for pyenv. I'm installing them here since the setup_python.sh script needs to be run
