@@ -35,6 +35,10 @@ gsettings set $schema_path audible-bell false
 gsettings set $schema_path use-theme-colors false
 gsettings set $schema_path background-color '#000000'
 
+# Set the opacity of the terminal
+gsettings set $schema_path use-transparent-background true
+gsettings set $schema_path background-transparency-percent 50
+
 # KeyBindings for Teminal
 gsettings_schema=org.gnome.Terminal.Legacy.Keybindings
 gsettings_path=/org/gnome/terminal/legacy/keybindings/
