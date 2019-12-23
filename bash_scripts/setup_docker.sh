@@ -28,6 +28,5 @@ apt install -y docker-ce docker-ce-cli containerd.io || fail "Couldn't install t
 # Enable the normal user to run docker with sudo privileges.
 groupadd docker
 usermod -aG docker $USERNAME
-newgrp docker
 
 exit 0

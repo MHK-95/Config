@@ -20,6 +20,8 @@ apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline
     || fail "Couldn't install a package." 1
 
 # install flatpak
-apt install flatpak || fail "Couldn't install the flatpak package." 1
+add-apt-repository ppa:alexlarsson/flatpak
+sudo apt update
+apt install -y flatpak || fail "Couldn't install the flatpak package." 1
 
 exit 0

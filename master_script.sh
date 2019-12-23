@@ -18,12 +18,12 @@ test $EUID -eq 0 || fail "This script can only be run as root." 1
 
 ./bash_scripts/setup_docker.sh || exit $?
 
-su -c "./bash_scripts/setup_python.sh" $USERNAME || exit $?
+su -l $USERNAME --command="$PWD/bash_scripts/setup_python.sh" || exit $?
 
-su -c "./bash_scripts/setup_flatpak.sh" $USERNAME || exit $?
+su -l $USERNAME --command="$PWD/bash_scripts/setup_flatpak.sh" || exit $?
 
-su -c "./bash_scripts/make_symlinks.sh" $USERNAME || exit $?
+su -l $USERNAME --command="$PWD/bash_scripts/make_symlinks.sh" || exit $?
 
-su -c "./bash_scripts/configure_gnome.sh" $USERNAME || exit $?
+su -l $USERNAME --command="$PWD/bash_scripts/configure_gnome.sh" || exit $?
 
 exit 0

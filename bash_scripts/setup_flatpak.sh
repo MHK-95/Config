@@ -8,7 +8,6 @@ source ./bash_scripts/common.sh
 
 test $EUID -eq 0 && fail "This script can only be run as a normal user." 1
 
-# Add the flathub repo
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo \
     || fail "Couldn't add the flathub repo." 1
 
@@ -23,7 +22,7 @@ flathub_map[com.jetbrains.PyCharm-Community]=pycharm
 
 for app in "${!flathub_map[@]}"
 do
-    flatpak install -y flathub $app || Fail "Couldn't install flatpak app, $app." 1
+    flatpak install -y flathub $app || fail "Couldn't install flatpak app, $app." 1
     echo "alias ${flathub_map[$app]}='flatpak run $app'" >> "$aliases_file"
 done
 
