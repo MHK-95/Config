@@ -11,14 +11,13 @@ test $EUID -eq 0 && fail "This script can only be run as normal user." 1
 # Disable Animations
 gsettings set org.gnome.desktop.interface enable-animations false
 
+# Disable all bell sounds
+gsettings set org.gnome.desktop.sound event-sounds false
+
 # Setup my Dash with my favorite apps
 gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', \
     'org.gnome.Terminal.desktop', 'com.visualstudio.code.oss.desktop', 'com.jetbrains.PyCharm-Community.desktop', \
     'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop']"
-
-# Set The Dash's opacity
-# gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
-# gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.9
 
 # Terminal
 gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false
@@ -37,7 +36,7 @@ gsettings set $schema_path background-color '#000000'
 
 # Set the opacity of the terminal
 gsettings set $schema_path use-transparent-background true
-gsettings set $schema_path background-transparency-percent 50
+gsettings set $schema_path background-transparency-percent 40
 
 # KeyBindings for Teminal
 gsettings_schema=org.gnome.Terminal.Legacy.Keybindings
