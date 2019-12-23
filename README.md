@@ -17,7 +17,7 @@ First, simply run the master_script-root.sh with sudo.
 $ sudo ./master_script-root.sh
 ```
 
-Then, run the master-script-user as normal.
+Then, run the master-script-user as a normal user.
 ```
 $ ./master_script-user.sh
 ```
