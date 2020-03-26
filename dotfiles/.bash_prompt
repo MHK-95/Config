@@ -69,10 +69,15 @@ set_prompt() {
         git_info="$(font ${fg} ${yellow})${git_info}$(font)"
     fi
 
+    local venv=${VIRTUAL_ENV##*/}
+    if [[ ${venv} ]]; then
+        venv="$(font ${fg} ${blue}) (${venv})$(font)"
+    fi
+
     PS1="┌─[$(font ${fg} ${cyan})${cwd}$(font) ${files} files, ${total_size}]"
 #    PS1+="───[${date} ${time} ${uptime}]"
     PS1+="───[$(font ${fg} ${yellow})${user}@$(font ${fg} ${yellow})${host}$(font)]"
-    PS1+="───[$(font ${fg} ${green})${pwd}${git_info}$(font)]"
+    PS1+="───[$(font ${fg} ${green})${pwd}${git_info}${venv}$(font)]"
     PS1+="\n└─▶ "
 }
 
