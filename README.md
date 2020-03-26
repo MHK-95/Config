@@ -23,3 +23,6 @@ $ ./master_script-user.sh
 ```
 
 The system needs to be rebooted for some of the changes to take place, like the favorite apps to be added to GNOME Dash.
+
+After restarting, the Ubuntu machine should look like this.
+![screenshot](screenshot)

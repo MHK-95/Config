@@ -11,6 +11,9 @@ test $EUID -eq 0 && fail "This script can only be run as normal user." 1
 # Disable Animations
 gsettings set org.gnome.desktop.interface enable-animations false
 
+# Disable blinking cursor on everything
+gsettings set org.gnome.desktop.interface cursor-blink false
+
 # Disable all bell sounds
 gsettings set org.gnome.desktop.sound event-sounds false
 
