@@ -4,7 +4,8 @@
 #----------------------------------------------------------------------------------------------------------------------#
 # This script will configure GNOME with the settings I want using gsettings.
 
-source ./bash_scripts/common.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/common.sh
 
 test $EUID -eq 0 && fail "This script can only be run as normal user." 1
 
@@ -39,7 +40,7 @@ gsettings set $schema_path background-color '#000000'
 
 # Set the opacity of the terminal
 gsettings set $schema_path use-transparent-background true
-gsettings set $schema_path background-transparency-percent 40
+gsettings set $schema_path background-transparency-percent 10
 
 # KeyBindings for Teminal
 gsettings_schema=org.gnome.Terminal.Legacy.Keybindings

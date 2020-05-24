@@ -6,7 +6,8 @@
 # version. This script can only be run a normal user, since pyenv is installed in the userspace instead of the
 # system.
 
-source ./bash_scripts/common.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/common.sh
 
 test $EUID -eq 0 && fail "This script can only be run as a normal user." 1
 

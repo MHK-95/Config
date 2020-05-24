@@ -4,7 +4,8 @@
 #----------------------------------------------------------------------------------------------------------------------#
 # This script will install docker and give the user the ability to run docker without root privileges.
 
-source ./bash_scripts/common.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/common.sh
 
 test $EUID -eq 0 || fail "This script can only be run as root" 1
 
@@ -17,7 +18,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - || fail 
 apt-key fingerprint 0EBFCD88
 
 # Add the Docker repo.
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" \
     || fail "Couldn't add the docker repository." 1
 
 apt update || fail "Couldn't apt update." 1

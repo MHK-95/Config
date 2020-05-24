@@ -4,13 +4,14 @@
 #----------------------------------------------------------------------------------------------------------------------#
 # This script will simply install the packages I want with apt.
 
-source ./bash_scripts/common.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/common.sh
 
 test $EUID -eq 0 || fail "This script can only be run as root." 1
 
 apt update || fail "Could't apt update." 1
 
-apt install -y neofetch vim youtube-dl openssh-server htop \
+apt install -y neofetch vim youtube-dl openssh-server htop tree \
     || fail "Couldn't install a package." 1
 
 # These are the dependencies for pyenv. I'm installing them here since the setup_python.sh script needs to be run

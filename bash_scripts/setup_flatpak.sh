@@ -4,7 +4,8 @@
 #----------------------------------------------------------------------------------------------------------------------#
 # This script will install flatpak and install the flatpak apps I want from flathub.
 
-source ./bash_scripts/common.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/common.sh
 
 test $EUID -eq 0 && fail "This script can only be run as a normal user." 1
 
@@ -19,6 +20,7 @@ flathub_map[com.visualstudio.code.oss]=vscode
 flathub_map[com.spotify.Client]=spotify
 flathub_map[com.discordapp.Discord]=discord
 flathub_map[com.jetbrains.PyCharm-Community]=pycharm
+flathub_map[com.jetbrains.IntelliJ-IDEA-Ultimate]=idea
 
 for app in "${!flathub_map[@]}"
 do

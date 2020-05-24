@@ -1,5 +1,5 @@
 # Config
-This repository sets up my personal configuration for my Ubuntu 18 LTS machines. Anyone is free to see and use anything written here.
+This repository sets up my personal configuration for my Ubuntu 20 LTS machines.
 
 These scripts will install the software I want, make symlinks to my config dotfiles, and configure GNOME.
 

@@ -10,7 +10,8 @@
 # If the dotfiles directory contains directories, this script will those directories if they don't exist in the home
 # directory.
 
-source ./bash_scripts/common.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/common.sh
 
 # Make sure this script is run a normal user, since we want the normal user to be the owner of the directories and the
 # symlinks.
