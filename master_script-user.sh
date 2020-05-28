@@ -10,6 +10,9 @@ source $DIR/bash_scripts/common.sh
 
 test $EUID -eq 0 && fail "This script can only be run as a normal user." 1
 
+# Make private home directory bin. Ubuntu 20.04 will automatically add it to path in ~/.profile.
+mkdir -p $HOME/bin
+
 $DIR/bash_scripts/setup_flatpak.sh || exit $?
 
 $DIR/bash_scripts/setup_python.sh || exit $?
