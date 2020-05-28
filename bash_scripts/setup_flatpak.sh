@@ -21,6 +21,7 @@ flathub_map[com.spotify.Client]=spotify
 flathub_map[com.discordapp.Discord]=discord
 flathub_map[com.jetbrains.PyCharm-Community]=pycharm
 flathub_map[com.jetbrains.IntelliJ-IDEA-Ultimate]=idea
+flathub_map[org.gimp.GIMP]=gimp
 
 for app in "${!flathub_map[@]}"
 do
