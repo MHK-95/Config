@@ -14,4 +14,6 @@ $DIR/bash_scripts/install_packages.sh || exit $?
 
 $DIR/bash_scripts/setup_docker.sh || exit $?
 
+$DIR/bash_scripts/edit_etc_files.sh || exit $?
+
 exit 0

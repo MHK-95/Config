@@ -9,9 +9,6 @@ source $DIR/common.sh
 
 test $EUID -eq 0 && fail "This script can only be run as normal user." 1
 
-# Disable automatically updating software
-gsettings set org.gnome.software download-updates false
-
 # Disable Animations
 gsettings set org.gnome.desktop.interface enable-animations false
 
