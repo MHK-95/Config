@@ -13,11 +13,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
     || fail "Couldn't add the flathub repo." 1
 
 declare -A flathub_map
-flathub_map[com.visualstudio.code.oss]=vscode
 flathub_map[com.spotify.Client]=spotify
-flathub_map[com.discordapp.Discord]=discord
-flathub_map[com.jetbrains.PyCharm-Community]=pycharm
-flathub_map[com.jetbrains.IntelliJ-IDEA-Ultimate]=idea
 flathub_map[org.gimp.GIMP]=gimp
 
 for app in "${!flathub_map[@]}"
@@ -31,9 +27,5 @@ EOF
 
     chmod +x $HOME/bin/${flathub_map[$app]}
 done
-
-# Extra things to do.
-# Have vscode install the sync extension.
-flatpak run com.visualstudio.code.oss --install-extension Shan.code-settings-sync
 
 exit 0

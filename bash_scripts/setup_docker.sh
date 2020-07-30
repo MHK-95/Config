@@ -18,7 +18,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - || fail 
 apt-key fingerprint 0EBFCD88
 
 # Add the Docker repo.
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" \
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
     || fail "Couldn't add the docker repository." 1
 
 apt update || fail "Couldn't apt update." 1

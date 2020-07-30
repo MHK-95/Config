@@ -1,0 +1,23 @@
+#!/bin/bash
+#----------------------------------------------------------------------------------------------------------------------#
+#                                                  update_everything                                                   #
+#----------------------------------------------------------------------------------------------------------------------#
+# This script will update all the snaps, flatpaks, and apt packages.
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/common.sh
+
+# snap
+sudo snap refresh || fail "Couldn't snap refresh." 1
+
+# apt
+sudo apt update || fail "Couldn't apt update." 1
+sudo apt upgrade -y || fail "Couldn't apt upgrade." 1
+
+# flatpak
+flatpak update || fail "Couldn't update flatpak apps." 1
+
+# Remove orphanaged apt packages."
+sudo apt autoremove
+
+exit 0

@@ -19,9 +19,10 @@ gsettings set org.gnome.desktop.interface cursor-blink false
 gsettings set org.gnome.desktop.sound event-sounds false
 
 # Setup my Dash with my favorite apps
-gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', \
-    'org.gnome.Terminal.desktop', 'com.visualstudio.code.oss.desktop', 'com.jetbrains.IntelliJ-IDEA-Ultimate.desktop', \
-    'com.jetbrains.PyCharm-Community.desktop', 'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop']"
+gsettings set org.gnome.shell favorite-apps "['brave-browser.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'com.spotify.Client.desktop', 'webstorm_webstorm.desktop', 'goland_goland.desktop', 'pycharm-professional_pycharm-professional.desktop', 'intellij-idea-ultimate_intellij-idea-ultimate.desktop']"
+
+# Have the dock minimize apps on right click
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-overview'
 
 # Terminal
 gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false
