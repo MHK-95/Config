@@ -12,6 +12,8 @@ test $EUID -eq 0 || fail "This script can only be run as root." 1
 
 $DIR/bash_scripts/install_packages.sh || exit $?
 
+$DIR/bash_scripts/install_snaps.sh || exit $?
+
 $DIR/bash_scripts/setup_docker.sh || exit $?
 
 $DIR/bash_scripts/edit_etc_files.sh || exit $?
