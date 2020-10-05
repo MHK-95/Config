@@ -17,6 +17,8 @@ $DIR/bash_scripts/setup_flatpak.sh || exit $?
 
 $DIR/bash_scripts/setup_python.sh || exit $?
 
+$DIR/bash_scripts/copy_bin_scripts.sh || exit $?
+
 $DIR/bash_scripts/make_symlinks.sh || exit $?
 
 $DIR/bash_scripts/configure_gnome.sh || exit $?
